@@ -1,0 +1,15 @@
+<div class="card card-stats">
+    <div class="card-header card-header-warning card-header-icon">
+        <img class="img-fluid" alt="masque" src="./assets/img/masque-enfant.jpg">
+        <p class="card-category">{{ produitNom }}</p>
+        <div class="row justify-content-between align-items-end">
+            <h4 class="card-title col-6">{{ produitPrix }}
+                <small>€</small>
+            </h4>
+            <p class="text-danger col-6 text-center" *ngIf="checkStock()">Épuisé</p>
+        </div>
+        <div class="text-center">
+            <button style="background-color: blue;" class="btn btn-info" [disabled]="checkStock()" (click)="ajouterAuPanier()">Ajouter au panier</button>
+        </div>       
+    </div>
+</div>

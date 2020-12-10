@@ -1,0 +1,34 @@
+
+<h2 class="text-center">Votre panier</h2>
+<div class="container-fluid">
+    <p class="font-weight-bold text-start text-info" *ngIf="!checkPanier()">Votre panier est vide</p>
+
+    <table *ngIf="checkPanier()" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Produit</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Cant.</th>
+                <th scope="col">Total Produit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produit of produitsPanier">
+                <td> {{ produit.nom }} </td>
+                <td> {{ produit.prix}}<small>€</small> </td>
+                <td> {{ produit.cant}} </td>
+                <td> {{ produit.prix * produit.cant}}<small>€</small> </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="bg-customBlue">
+                <td class="font-weight-bold" colspan="3"> Total Commande</td>
+                <td class="font-weight-bold"> {{ calculTotal() }}<small>€</small> </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-center">
+        <button *ngIf="checkPanier()" class="btn btn-info">Passe Commande</button>
+    </div>
+</div>
+

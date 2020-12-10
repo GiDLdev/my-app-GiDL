@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<div class="content" role="main">
+
+  <h2 class="text-center">Masque de type chirurgical à usage unique</h2>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="row">  
+        <app-produit class="col-sm-6 col-lg-4" *ngFor="let produit of produits"
+        [produitCod]=produit.cod [produitNom]=produit.nom [produitPrix]=produit.prix 
+        [produitStock]=produit.stock [produitAjoute]=produit.ajoute></app-produit>
+      </div>  
+    </div>
+  </div> 
+  <app-panier></app-panier> 
+    
+</div> 
+
+<router-outlet></router-outlet>
